@@ -1,29 +1,54 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
-void function(int num);
+float taxcalculator(char type,float price);
 main()
 {
-    int num;
-    cout << "Enter any number: ";
-    cin >> num;
-    function(num);
+    char type;
+    float price;
+    float finalresult;
+    system("cls");
+    cout<<"enter the price of vehical";
+    cin>>price;
+    cout<<"enter the type of vehical";
+    cin>>type;
+    finalresult=taxcalculator(type, price);
+    cout<<"The final Price of Vehical of type $"<<type<<"after adding the tax is $"<<finalresult<<endl;
+
 }
-void function(int num)
+ float taxcalculator(char type, float price)
 {
-    int sum, digit1, digit2, digit3, digit4, digit5;
-    digit1 = num % 10;
-    digit2 = (num / 10) % 10;
-    digit3 = (num / 100) % 10;
-    digit4 = (num / 1000) % 10;
-    digit5 = (num / 10000) % 10;
-    sum = digit1 + digit2 + digit3 + digit4 + digit5;
-    cout << "sum is: " << sum << endl;
-    if (sum % 2 == 0)
+    float taxprice;
+    float final;
+    float amount;
+     if(type=='M')
+     {
+        amount=(price*6) /100;
+        final=price+amount;
+        return final;
+     }
+       if(type=='E')
     {
-        cout << "Number is evenish.";
-    }
-    if (sum % 2 != 0)
-    {
-        cout << "Number is oddish.";
-    }
+        amount=(price*8) /100;
+        final=price+amount;
+        return final;
+     } 
+         if(type=='S')
+      {
+        amount=(price*10) /100;
+        final=price+amount;
+        return final;
+      }  
+          if(type=='V')
+       {
+         amount=(price*12) /100;
+         final=price+amount;
+         return final;
+        } 
+           if(type=='T')
+          {
+            amount=(price*15) /100;
+             final=price+amount;
+             return final;
+           }
+               return 0;
 }

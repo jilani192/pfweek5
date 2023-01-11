@@ -1,21 +1,15 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
-void check(char x);
+int x=10;
+void myfunction()
+{
+     cout<<"the value of function x is:"<<x;
+    int x=20;
+}
 main()
 {
-    char x;
-    cout << "Enter any chracter : ";
-    cin >> x;
-    check(x);
-}
-void check(char x)
-{
-    if (x >= 'A' && x <= 'Z')
-    {
-        cout << "You entered an uppercase chracter.";
-    }
-    if (x >= 'a' && x <= 'z')
-    {
-        cout << "You entered a lowercase chracter.";
-    }
+    myfunction();
+    int x=30;
+    cout<<"the value of the x is:"<<x;
+    myfunction();
 }

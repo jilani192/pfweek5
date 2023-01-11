@@ -1,27 +1,49 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
-void symmetrical(int);
-int number;
-int main()
+float volume(float length, float height, float width,char unit);
+main()
 {
-    cout << "Enter any number : ";
-    cin >> number;
-    symmetrical(number);
-    return 0;
+    system("cls");
+    float height;
+    float length;
+    float width;
+    char unit;
+    float volume1;
+    float volume2;
+    cout<<"enter length"<<endl;
+    cin>>length;
+    cout<<"enter height"<<endl;
+    cin>>height;
+    cout<<"enter width"<<endl;
+    cin>>width;
+    cout<<"enter unit m for milli, c for centimeter, m for meter, and km for kilometer"<<endl;
+    cin>>unit;
+    volume1=volume(length,height,width,unit);
+   cout<<"pyramidvolume is ..."<<volume1<<"cubic"<<unit;
+
 }
-void symmetrical(int)
+float volume(float length,float height,float width,char unit)
 {
-    int remainder, qoutient, reverse = 0;
-    qoutient = number;
-    while (qoutient > 0)
-    {
-        remainder = qoutient % 10;
-        reverse = (reverse * 10) + remainder;
-        qoutient = qoutient / 10;
-    }
-    cout << "The reverse of your number is : " << reverse << endl;
-    if (reverse == number)
-        cout << "Your number is symmetrical .";
-    else
-        cout << "Your number is unsymmetrical .";
+    float volume2;
+    float volume3;
+    float volume4;
+    float volume5;
+    volume2=(length*height*width) /3;
+     if(unit=='c')
+     {
+        volume3=volume2*1000000;
+        return volume3;
+     }
+     if(unit=='k')
+     {
+        volume3=volume2/1000000000;
+        return volume3;
+     }
+     if(unit=='m')
+     {
+        volume3=volume2*1000000000;
+        return volume3;
+     }
+    return 0; 
+
 }
